@@ -1,4 +1,4 @@
-package bitdb
+package wolkedb
 
 func (self *Tx) exec(ql string, lines [][]field) (int64, error) {
 	lineLen := len(lines)

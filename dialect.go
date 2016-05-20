@@ -1,4 +1,4 @@
-package bitdb
+package wolkedb
 
 import (
 	"strings"
