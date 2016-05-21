@@ -1,17 +1,17 @@
-package bitdb
+package wolkedb
 
 import "database/sql"
 
-type BitDB struct  {
+type Engine struct  {
 	db *sql.DB
 	dialect string
 }
 
-func New(db *sql.DB, dialect string) *BitDB {
-	return &BitDB{db:db, dialect:dialect}
+func New(db *sql.DB, dialect string) *Engine {
+	return &Engine{db:db, dialect:dialect}
 }
 
-func (self *BitDB) BeginTx() (*Tx, error) {
+func (self *Engine) BeginTx() (*Tx, error) {
 	sqlTx, txBeginErr := self.db.Begin()
 	if txBeginErr != nil {
 		return nil, txBeginErr
